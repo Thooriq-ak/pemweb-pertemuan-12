@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown List Gambar</title>
+    <style>
+      #image-container {
+        margin-top: 20px;
+      }
+
+      #display-image {
+        max-width: 100%;
+        max-height: 300px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="image-select">Pilih Gambar:</label>
+    <select id="image-select" onchange="displaySelectedImage()">
+      <option value="img/badak.jpg">Badak</option>
+      <option value="img/buaya.jpeg">Buaya</option>
+      <option value="img/kelinci.jpg">Kelinci</option>
+      <option value="img/Kucing.jpg">Kucing</option>
+      <option value="img/monyet.jpg">Monyet</option>
+    </select>
+
+    <div id="image-container">
+      <img id="display-image" src="" alt="Gambar Terpilih" />
+    </div>
+
+    <script>
+      function displaySelectedImage() {
+        // Mendapatkan elemen dropdown
+        var dropdown = document.getElementById("image-select");
+
+        // Mendapatkan nilai terpilih dari dropdown
+        var selectedImage = dropdown.options[dropdown.selectedIndex].value;
+
+        // Mendapatkan elemen gambar
+        var displayImage = document.getElementById("display-image");
+
+        // Mengganti sumber gambar
+        displayImage.src = selectedImage;
+
+        // Menampilkan gambar
+        displayImage.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
