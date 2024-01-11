@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+  </head>
+  <body>
+    <div id="output"></div>
+
+    <script>
+      let siswa1 = {
+        nama: "thoriq",
+        umur: 18,
+        berat: 52,
+        cetak: function () {
+          return (
+            "Nama : " +
+            this.nama +
+            "\nUmur : " +
+            this.umur +
+            "\nBerat : " +
+            this.berat
+          );
+        },
+        status: function () {
+          if (this.berat < 60) {
+            return "kurus";
+          } else if (this.berat < 80) {
+            return "normal";
+          } else {
+            return "gemuk";
+          }
+        },
+      };
+      document.getElementById("output").innerHTML =
+        siswa1.cetak() + "<br>Status: " + siswa1.status();
+    </script>
+  </body>
+</html>

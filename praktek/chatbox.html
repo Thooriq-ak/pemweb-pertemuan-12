@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Box</title>
+  </head>
+  <body>
+    <div class="countainer" style="border: 1px solid #000000; width: 217px">
+      <div class="box" style="height: 200px" id="chatBox"></div>
+      <div style="display: flex">
+        <input type="text" id="chat" />
+        <button onclick="send()" onchange="send()">Kirim</button>
+      </div>
+    </div>
+    <script>
+      function send() {
+        chatBox = document.getElementById("chatBox");
+        let chat = document.getElementById("chat");
+
+        chatBox.innerHTML += chat.value + "<br>";
+
+        chat.value = "";
+      }
+    </script>
+  </body>
+</html>
